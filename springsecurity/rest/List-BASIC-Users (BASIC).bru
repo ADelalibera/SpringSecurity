@@ -1,0 +1,26 @@
+meta {
+  name: List-BASIC-Users (BASIC)
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/users
+  body: none
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "username":"ale",
+    "password":"123"
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Delete-Tweet
+  type: http
+  seq: 8
+}
+
+delete {
+  url: http://localhost:8080/tweets/55
+  body: none
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "username":"ale",
+    "password":"123"
+  }
+}

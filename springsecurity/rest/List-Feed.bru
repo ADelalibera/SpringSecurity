@@ -1,0 +1,31 @@
+meta {
+  name: List-Feed
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:8080/feed?page=0&pageSize=10
+  body: none
+  auth: bearer
+}
+
+params:query {
+  page: 0
+  pageSize: 10
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "username":"ale",
+    "password":"123"
+  }
+}

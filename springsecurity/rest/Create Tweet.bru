@@ -1,0 +1,25 @@
+meta {
+  name: Create Tweet
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/tweets
+  body: json
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "content": "first tweet!"
+  }
+}

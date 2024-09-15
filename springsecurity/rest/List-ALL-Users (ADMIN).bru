@@ -1,0 +1,26 @@
+meta {
+  name: List-ALL-Users (ADMIN)
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/all-users
+  body: none
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "username":"ale",
+    "password":"123"
+  }
+}
